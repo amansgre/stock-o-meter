@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app='stockmeter'>
+
+<head>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/app.css">
+</head>
+   <body>
+     <div ng-controller='StockDetails' >
+      <div align="center">
+        <div>
+          <h1>Welcome to stock-o-meter </h1>
+        </div>
+        <input type="text" ng-model="sName" placeholder="Stock Name">
+        <button ng-click="addStockItem()" class='btn btn-default'>Add Stock</button>
+
+  <h1>Stock List</h1>
+        <ul class='list-group'>
+          <li ng-repeat="item in inventory|orderBy:'-date'" class='list-group-item'>
+            <strong>{{item.stockName}}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Stock Price Controller and Display-->
+    <div ng-controller='StockPriceCtrl'>
+      <table class="table" align='center'>
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Stock Price</th>
+            </tr>
+        </thead>
+                <tr ng-repeat="stock in stockQuoteInventory">
+                    <td>{{stock.symbol}}</td>
+                    <td>{{stock.price}}</td>
+                </tr>
+      </table>
+    </div>
+  </body>
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js'></script>
+<script src='app.js'></script>
+<script>
+
+
+</script>
+
+</html>

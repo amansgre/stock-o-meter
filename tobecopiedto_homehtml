@@ -1,0 +1,23 @@
+stockofun.config(['$routeProvider',function($routeProvider){
+  $routeProvider.
+  when('/showStock',
+  {templateUrl:'showStock.htm',
+   controller:'showStockController'}).
+  when('/showPrice',
+  {templateUrl:'showPrice.htm',
+   controller:'showPriceController'}).
+   otherwise({redirectTo:'/showStock'
+ });
+
+};
+
+]);
+
+stockofun.controller('showStockController', function($scope) {
+          $scope.message = "This page will be used to display Stock";
+       });
+
+stockofun.controller('showPriceController', function($scope) {
+          $scope.message = "This page will be used to display Stock Price";
+       });
+       
