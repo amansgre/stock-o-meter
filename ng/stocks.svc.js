@@ -13,6 +13,11 @@ app.service('StockSvc',function($http){
     return $http.get(requestString)
   }
   //this.inventory=$http.get('/api/stocks');
+
+this.addStockItem=function(){
+
+}
+
 })
 
 
@@ -21,3 +26,6 @@ this.getSharedData=function(){
 return $http.get('/api/stocks')
 }
 })
+
+//service to add symbol drop down
+// url https://api.iextrading.com/1.0/tops/
