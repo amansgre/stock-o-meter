@@ -1,3 +1,45 @@
 h1 {
-  color: #008000;
+  color: #002e80
+}
+
+body {
+    --background-color: #cccccc;
+    background-image: url("homepage.jpg");
+    background-size: 1440px 800px;
+    background-repeat:no-repeat;
+    max-width:100%;
+}
+
+
+stockName {
+    background-color: #cccccc;
+
+}
+
+t1{
+  width:24px
+}
+
+#t_head.header_font{
+  font-style: italic;
+  color:#61380B;
+}
+
+#t_head.header_font{
+  font-style: italic;
+  color:#002e80;
+  font-weight: bolder;
+  font-size: 24;
+}
+
+#t_head_list.header_font{
+  font-style: oblique;;
+  color:#61380B;
+}
+
+
+.header_font{
+  font-style: italic;
+  color:#61380B;
+  font-weight: bolder;
 }

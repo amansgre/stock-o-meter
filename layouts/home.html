@@ -2,14 +2,17 @@
 <html ng-app='stockmeter'>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/app.css">
 </head>
-   <body>
-     <div ng-controller='StockPriceDropDown' >
+  <body>
+  <div class="container-fluid" ng-controller="StockPriceDropDown">
+   <div>
       <div align="center">
         <div>
-          <h1>Welcome to stock-o-meter </h1>
+          <h1>S T O C K - o - M E T E R</h1>
         </div>
             <!-- Drop Down to Select the symbols -->
               <br/>
@@ -19,34 +22,48 @@
               <button ng-click="addStockItem()" class='btn btn-default'>Add Stock</button>
               <br>
 
-          <h1>Stock List</h1>
-                  <ul class='list-group'>
-                          <li ng-repeat="item in inventory|orderBy:'-date'" class='list-group-item'>
-                            <strong>{{item.stockName}}</strong>
-                          </li>
+          <table id="tb_pfolio">
+          <h1>Portfolio</h1>
+              <div>
+                  <ul>
+                        <table align="center">
+                          <div id = "stockName" ng-model="sListName" ng-repeat="item in inventory|orderBy:'-date'">
+                            <div>
+                            <strong><font id="t_head_list" class="header_font">{{item.stockName}}</font></strong>
+                            <button type="button" class="btn btn-default btn-sm" ng-click="removeStockItem(item.stockName)">
+                                  <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                              </div>
+                          </div>
+                        </table>
                   </ul>
-      </div>
+              </div>
+            </table>
     </div>
     <!-- Stock Price Controller and Display-->
     <div ng-controller='StockPriceCtrl'>
-            <table class="table" align='center'>
-                  <thead>
+            <table id="tb_details" align="center" border="3">
+                  <thead id="t_head" class="header_font">
                         <tr>
                             <th>Stock Symbol</th>
                             <th>Stock Price</th>
                         </tr>
                   </thead>
-                        <tr ng-repeat="stock in stockQuoteInventory">
+                        <tr class="header_font" ng-repeat="stock in stockQuoteInventory">
                             <td>{{stock.symbol}}</td>
                             <td>{{stock.price}}</td>
                         </tr>
             </table>
     </div>
+  </div>
   </body>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js'></script>
 <script src='app.js'></script>
 <script>
+// class='list-group-item'
+// class="table"
+//class="table table-hover"
 </script>
 
 </html>

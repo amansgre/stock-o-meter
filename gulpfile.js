@@ -10,7 +10,7 @@ fs.readdirSync(__dirname + '/gulp').forEach(function (task) {
 })
 
 gulp.task('js',function(){
-  gulp.src(['ng/module.js','ng/**/*.js'])
+  gulp.src(['ng/module.js','ng/**/*.js','controllers/**/*.js'])
   .pipe(sourcemaps.init())
   .pipe(concat('app.js'))
   .pipe(ngAnnotate())
@@ -21,7 +21,9 @@ gulp.task('js',function(){
 
 gulp.task('watch:js',['js'],function(){
   gulp.watch('ng/**/*.js',['js'])
+  gulp.watch('controllers/**/*.js',['js'])
 })
+
 
 gulp.task('watch:css',function(){
   gulp.watch('css/**/*.styl',['css'])
