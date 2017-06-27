@@ -18,20 +18,26 @@
 Proceed installing following
 
 #Installing Node
+  
   brew install node
 
 #Install MongoDB
+  
   brew install mongodb
 
 #Installing Express
+  
   npm install --save express
   npm install --save body-parser
+
 #body-parser is used for express to read in JSON
 
 #Installing mongoose(used as ORM for mapping angular models to MongoDB)
+
   npm install --save mongoose
 
 #Installing gulp(to automate the build process)
+
   npm install --global gulp
   npm install --save gulp
 
