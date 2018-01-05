@@ -14,8 +14,8 @@
     using a 3rd party API calls ("https://api.iextrading.com/1.0/tops/")
 
 
-# 4. Installation
-Proceed installing following
+# 4. Installations required before running
+  Proceed installing following
 
 #Installing Node
   brew install node
@@ -35,8 +35,12 @@ Proceed installing following
   npm install --global gulp
   npm install --save gulp
 
+# 5.How to run the project
 
   - Clone the repository https://github.com/amansgre/stock-o-meter
   - The file "package.json" contains all the info/list of all the artifacts project depends on.
   - By default project is designed to run on the localhost port 3000,so if you have already somethin
     running on this port , change the server in server.js in root directory.
+  - Go to project directory and kick off the server using below command.
+
+    gulp dev
